@@ -3,12 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+// Use this for Stripe
+use Laravel\Cashier\Billable;
+// Use this for LemonSqueezy
+//use LemonSqueezy\Laravel\Billable;
 
 class User extends Authenticatable
 {
@@ -17,6 +22,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -61,5 +67,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Check if user can access panel,
+        //        return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
+
+        return $this->is_admin;
+    }
+
+    public function trialIsUsed()
+    {
+        return $this->trial_is_used;
     }
 }

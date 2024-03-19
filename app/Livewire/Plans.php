@@ -6,12 +6,14 @@ use Livewire\Component;
 
 class Plans extends Component
 {
+    // Use StripeClient or LemonSqueezyService to get prices dynamically
+    // Example of dynamic usage for LemonSqueezy-> https://docs.larafast.com/components/plans
     public $plans = [
         [
             'name' => 'Free',
             'slug' => 'free',
             'description' => 'Individuals or small businesses with moderate social media needs.',
-            'price' => '0',
+            'price' => 0,
             'interval' => 'month',
             'features' => [
                 'Feature 1',

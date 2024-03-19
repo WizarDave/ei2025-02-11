@@ -1,10 +1,24 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LemonSqueezyController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\StripeController;
+use App\Http\Middleware\Subscribed;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
+
+Route::get('/auth/redirect/{driver}', [SocialiteController::class, 'redirect'])
+    ->name('socialite.redirect');
+Route::get('/auth/callback/{driver}', [SocialiteController::class, 'callback'])
+    ->name('socialite.callback');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{article:slug}', [BlogController::class, 'article'])->name('blog.article');
 
 Route::middleware([
     'auth:sanctum',
@@ -31,5 +45,9 @@ Route::middleware([
         // move this part outside "auth:sanctum" middleware and change the logic inside method
         Route::get('product-checkout/{variantId}', [LemonSqueezyController::class, 'productCheckout'])->name('product.checkout');
         Route::get('billing', [LemonSqueezyController::class, 'billing'])->name('billing'); // Redirects to Customer Portal
+    });
+
+    Route::middleware([Subscribed::class])->group(function () {
+        // Add endpoints that are only for subscribed users
     });
 });

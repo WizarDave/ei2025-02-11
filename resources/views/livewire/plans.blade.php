@@ -17,10 +17,20 @@
                         <span class="text-base font-medium">/{{ $plan['interval'] }}</span>
                     @endif
                 </p>
+                {{-- Change to --}}
+                {{-- route('lemonsqueezy.subscription.checkout', ['productId' => $plan['productId'], 'variantId' => $plan['variantId']])--}}
+                {{-- for LemonSqueezy--}}
+                @if($plan['price'] !== 0)
                 <a href="{{ Auth::user() ? route('stripe.subscription.checkout', ['price' => $plan['slug']]) : route('register')}}"
                    class="mb-6 btn btn-secondary btn-wide text-center mx-auto flex">
                     Choose Plan
                 </a>
+                @else
+                <a href="{{ route('register') }}"
+                   class="mb-6 btn btn-secondary btn-wide text-center mx-auto flex">
+                    Choose Plan
+                </a>
+                @endif
                 <p class="text-sm mb-4">*7 Days Free Trial</p>
                 <ul>
                     @foreach($plan['features'] as $feature)

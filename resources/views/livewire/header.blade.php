@@ -8,15 +8,13 @@
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">How It Works</a></li>
-                <li><a href="">Blog</a></li>
+                <li><a href="{{ route('blog.index') }}">Blog</a></li>
             </ul>
         </div>
         <a href="/" class="flex flex-row items-center justify-center font-bold text-md">
-            <img class="w-16" src="/images/logo.svg" alt="">
+            <img class="w-16" src="{{ asset('/images/logo.svg') }}" alt="">
             <span class="ml-2 flex flex-col items-start">
-                    <span class="leading-4">Ship</span>
-                    <span class="leading-4">Fast</span>
-                    <span class="leading-4 text-secondary">with Laravel</span>
+                    <span class="leading-4 text-secondary">Your Startup Name</span>
                 </span>
         </a>
     </div>
@@ -25,7 +23,7 @@
             <li><a href="#">About Us</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#">How It Works</a></li>
-            <li><a :href="route('blog.index')">Blog</a></li>
+            <li><a href="{{ route('blog.index') }}">Blog</a></li>
         </ul>
     </div>
     <div class="navbar-end">

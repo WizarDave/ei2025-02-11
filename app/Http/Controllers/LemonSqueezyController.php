@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
 
 class LemonSqueezyController extends Controller
@@ -39,6 +38,6 @@ class LemonSqueezyController extends Controller
     {
         $url = $request->user()->customerPortalUrl();
 
-        return Inertia::location($url);
+        return redirect()->to($url);
     }
 }

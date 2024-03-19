@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Laravel\Cashier\Cashier;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -32,7 +31,7 @@ class StripeController extends Controller
 
         // If user already used his trial with different plan, new trial will not be allowed for him
         if (! $user->trialIsUsed()) {
-            $checkout = $checkout->trialDays(config('services.stripe.trial_period_days'));
+            $checkout = $checkout->trialDays((int) config('services.stripe.trial_period_days'));
         }
 
         return $checkout
@@ -66,21 +65,15 @@ class StripeController extends Controller
         return redirect()->route('dashboard')->banner('You have successfully subscribed');
     }
 
-    /**
-     * @return mixed
-     */
     public function error()
     {
         return redirect()->route('stripe.plans')->dangerBanner('Something Went Wrong');
     }
 
-    /**
-     * @return Response
-     */
-    public function billing(Request $request)
+    public function billing(Request $request): Response
     {
         $url = $request->user()->billingPortalUrl(route('dashboard'));
 
-        return Inertia::location($url);
+        return redirect()->to($url);
     }
 }

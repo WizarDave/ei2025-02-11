@@ -31,4 +31,51 @@ return [
         ],
     ],
 
+
+    'stripe' => [
+        'model' => App\Models\User::class,
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+        'trial_period_days' => env('STRIPE_TRIAL_PERIOD_DAYS', 7),
+    ],
+
+    'lemonsqueezy' => [
+        'base_url' => 'https://api.lemonsqueezy.com/v1',
+        'key' => env('LEMON_SQUEEZY_API_KEY'),
+        'store' => env('LEMON_SQUEEZY_STORE'),
+    ],
+
+    'openai' => [
+        'key' => env('OPENAI_KEY'),
+        'urls' => [
+            'base' => 'https://api.openai.com/v1/',
+            'completion' => 'chat/completions',
+            'images' => 'images/generations',
+            'text-to-speech' => 'audio/speech',
+        ],
+        'models' => [
+            'gpt4' => 'gpt-4-1106-preview',
+            'gpt3.5' => 'gpt-3.5-turbo',
+            'dalle' => 'dall-e-3',
+            'tts-1' => 'tts-1',
+        ],
+    ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => '/auth/callback/github',
+    ],
+
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => '/auth/callback/twitter',
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => '/auth/callback/google',
+    ],
 ];

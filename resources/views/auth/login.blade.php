@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-home-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -11,6 +11,9 @@
                 {{ $value }}
             </div>
         @endsession
+
+        <livewire:social.buttons />
+        <div class="divider">or</div>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -43,6 +46,12 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
+            <div class="flex flex-col items-center justify-end mt-4">
+                <p class="text-base">Do not have an account?</p>
+                <a href="{{ route('register') }}" class="ms-4 flex btn btn-ghost text-info">
+                    Register
+                </a>
+            </div>
         </form>
     </x-authentication-card>
-</x-guest-layout>
+</x-home-layout>

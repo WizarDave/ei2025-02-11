@@ -30,5 +30,7 @@
 <livewire:footer/>
 <livewire:copyright/>
 @livewireScripts
+
+@include('schema')
 </body>
 </html>
