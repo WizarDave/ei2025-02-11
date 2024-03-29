@@ -7,22 +7,22 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Cashier\Billable; // Use this for Stripe
 use Laravel\Fortify\TwoFactorAuthenticatable;
+//use Laravel\Paddle\Billable; // Use this for Paddle
+//use LemonSqueezy\Laravel\Billable; // Use this for LemonSqueezy
+
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-// Use this for Stripe
-use Laravel\Cashier\Billable;
-// Use this for LemonSqueezy
-//use LemonSqueezy\Laravel\Billable;
 
 class User extends Authenticatable
 {
+    use Billable;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use Billable;
 
     /**
      * The attributes that are mass assignable.
