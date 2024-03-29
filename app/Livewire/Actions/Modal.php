@@ -7,8 +7,11 @@ use Livewire\Component;
 class Modal extends Component
 {
     public $buttonText;
+
     public $id;
+
     public $title;
+
     public $description;
 
     public function render()

@@ -7,6 +7,7 @@ use Livewire\Component;
 class Dropdown extends Component
 {
     public $title;
+
     public $items;
 
     public function render()

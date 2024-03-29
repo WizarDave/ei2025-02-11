@@ -2,6 +2,7 @@
     <livewire:hero/>
     <livewire:partners/>
     <livewire:content-with-image/>
+{{--    for paddle plans use <livewire:paddle-plans/> --}}
     <livewire:plans/>
     <livewire:faq/>
     <livewire:cta/>
