@@ -6,17 +6,23 @@ use App\Http\Controllers\Payments\LemonSqueezyController;
 use App\Http\Controllers\Payments\PaddleController;
 use App\Http\Controllers\Payments\StripeController;
 use App\Http\Controllers\SitemapController;
-use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Middleware\Subscribed;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
 
-Route::get('/auth/redirect/{driver}', [SocialiteController::class, 'redirect'])
-    ->name('socialite.redirect');
-Route::get('/auth/callback/{driver}', [SocialiteController::class, 'callback'])
-    ->name('socialite.callback');
+Route::prefix('auth')->group(function () {
+    Route::get('/redirect/{driver}', [SocialiteController::class, 'redirect'])
+        ->name('socialite.redirect');
+    Route::get('/callback/{driver}', [SocialiteController::class, 'callback'])
+        ->name('socialite.callback');
+
+    // Magic Links
+    Route::post('/magic-link', [MagicLinkController::class, 'sendMagicLink'])->name('magic.link');
+    Route::get('/magic-link/{token}', [MagicLinkController::class, 'loginWithMagicLink'])->name('magic.link.login');
+});
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{article:slug}', [BlogController::class, 'article'])->name('blog.article');
