@@ -1,12 +1,12 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Payments\LemonSqueezyController;
 use App\Http\Controllers\Payments\PaddleController;
 use App\Http\Controllers\Payments\StripeController;
 use App\Http\Controllers\SitemapController;
-use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Middleware\Subscribed;
 use Illuminate\Support\Facades\Route;
 
