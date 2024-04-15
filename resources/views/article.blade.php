@@ -1,3 +1,7 @@
+@section('seo.title', $article->title)
+@section('seo.description', $article->short_description)
+@section('seo.image', $article->icon)
+
 <x-home-layout>
     <div class="lg:flex lg:items-start lg:justify-between lg:flex-col py-16">
     <div class="min-w-0 flex-1 ">
