@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.9",
         "lemonsqueezy/laravel": "^1.5",
         "livewire/livewire": "^3.0",
+        "sentry/sentry-laravel": "^4.4",
         "spatie/laravel-sitemap": "^7.2",
         "spatie/schema-org": "^3.23"
     },
