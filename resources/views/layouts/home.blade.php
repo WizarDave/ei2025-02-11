@@ -40,6 +40,7 @@
 </head>
 <body>
 <x-banner/>
+{{--<livewire:coming-soon/>--}}
 <livewire:header/>
 
 <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -48,6 +49,7 @@
 
 <livewire:footer/>
 <livewire:copyright/>
+
 @livewireScripts
 
 @include('schema')
