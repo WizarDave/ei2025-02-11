@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\MagicLinkController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Payments\LemonSqueezyController;
 use App\Http\Controllers\Payments\PaddleController;
@@ -33,9 +34,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     // Stripe Routes
     Route::prefix('stripe')->name('stripe.')->group(function () {

@@ -12,7 +12,7 @@ class BlogController extends Controller
             ->where('active', true)
             ->latest()->get();
 
-        return view('blog', ['articles' => $articles]);
+        return view('pages.blog.blog', ['articles' => $articles]);
     }
 
     public function article(Article $article)
@@ -21,6 +21,6 @@ class BlogController extends Controller
 
         //        \View::share(['schema' => ['article' => app(SchemaOrg::class)->article($article->load('user'))]]);
 
-        return view('article', ['article' => $article->load('user')]);
+        return view('pages.blog.article', ['article' => $article->load('user')]);
     }
 }
