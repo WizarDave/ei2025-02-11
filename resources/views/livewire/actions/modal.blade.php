@@ -1,5 +1,7 @@
-<!-- You can open the modal using ID.showModal() method -->
-<button class="btn" wire:click="$emit('showModal', '{{ $id }}')">{{ $buttonText }}</button>
+<!-- You can open the modal using window.ID.showModal() method -->
+{{--for example if your modal id is "subscribe" then you can open it using window.subscribe.showModal()--}}
+{{--<button class="btn" onclick="window.subscribe.showModal()">open modal</button>--}}
+
 <dialog id="{{ $id }}" class="modal">
     <div class="modal-box">
         <form method="dialog">
