@@ -10,10 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
-
 // Use this for Stripe
 use Laravel\Fortify\TwoFactorAuthenticatable;
-
 //use Laravel\Paddle\Billable; // Use this for Paddle
 //use LemonSqueezy\Laravel\Billable; // Use this for LemonSqueezy
 
@@ -74,7 +72,7 @@ class User extends Authenticatable implements FilamentUser
         ];
     }
 
-// Relations
+    // Relations
     public function socialAccounts(): HasMany
     {
         return $this->hasMany(SocialAccount::class);
