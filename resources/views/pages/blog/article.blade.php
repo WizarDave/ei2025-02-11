@@ -1,5 +1,5 @@
 @section('seo.title', $article->title)
-@section('seo.description', $article->short_description)
+@section('seo.description', $article->seo_description)
 @section('seo.image', $article->icon)
 
 <x-home-layout>
