@@ -12,7 +12,9 @@ class BlogController extends Controller
             ->where('active', true)
             ->latest()->get();
 
-        return view('pages.blog.blog', ['articles' => $articles]);
+        return view('pages.blog.blog', [
+            'articles' => $articles,
+        ]);
     }
 
     public function article(Article $article)
