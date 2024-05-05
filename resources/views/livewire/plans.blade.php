@@ -9,7 +9,7 @@
         @foreach($plans as $plan)
             <div class="px-8 py-12 border border-base-200 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer">
                 <p class="text-3xl font-extrabold mb-2">{{ $plan['name'] }}</p>
-                <p class="mb-6">
+                <p class="mb-6 h-16">
                     <span>Best For: </span> <span>{{ $plan['description'] }}</span></p>
                 <p class="mb-6">
                     <span class="text-4xl font-extrabold">${{ $plan['price'] }}</span>
