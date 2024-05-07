@@ -17,7 +17,7 @@
             <livewire:ratings/>
         </div>
         <div class="basis-1/3">
-            <img src="/images/hero.jpg" class="rounded-lg" alt=""/>
+            <img src="{{ asset('images/hero.jpg') }}" class="rounded-lg" alt=""/>
         </div>
     </div>
 </div>

@@ -13,12 +13,12 @@
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Transform Your Social Media Presence</h2>
             <p class="mt-6 text-lg leading-8 text-gray-300">Test Description</p>
             <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <a :href="route('register')" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Start Creating Now</a>
+                <a href="{{ route('register') }}" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Start Creating Now</a>
             </div>
         </div>
         <div class="relative mt-16 h-80 lg:mt-8">
             <img class="absolute left-0 top-2 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                 src="/images/cta.png" alt="App screenshot" width="1824" height="1080" />
+                 src="{{ asset('images/cta.png') }}" alt="App screenshot" width="1824" height="1080" />
         </div>
     </div>
 </div>
