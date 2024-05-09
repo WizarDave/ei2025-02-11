@@ -24,6 +24,7 @@
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#">How It Works</a></li>
             <li><a href="{{ route('blog.index') }}">Blog</a></li>
+            <li><a href="{{ route('coming-soon') }}">Coming Soon</a></li>
         </ul>
     </div>
     <div class="navbar-end">

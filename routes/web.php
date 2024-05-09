@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
 
+// Demo Coming Soon Page
+Route::get('coming-soon', function () {
+    return view('pages.coming-soon');
+})->name('coming-soon');
+
 Route::prefix('auth')->group(function () {
     Route::get('/redirect/{driver}', [SocialiteController::class, 'redirect'])
         ->name('socialite.redirect');
@@ -30,6 +35,7 @@ Route::prefix('auth')->group(function () {
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{article:slug}', [BlogController::class, 'article'])->name('blog.article');
 
+// Dynamic Open Graph Image
 Route::get('og-image/{title?}/{description?}', OgImageController::class)->name('og-image');
 
 // For testing and modifying the default image template
