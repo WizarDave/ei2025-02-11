@@ -16,6 +16,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 //use LemonSqueezy\Laravel\Billable; // Use this for LemonSqueezy
 
 use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
@@ -28,6 +29,7 @@ class User extends Authenticatable implements FilamentUser
     use HasPermissions;
     use HasProfilePhoto;
     use HasRoles;
+    use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
 
