@@ -3,6 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
+use App\Filament\Resources\UserResource\RelationManagers\PermissionRelationManager;
+use App\Filament\Resources\UserResource\RelationManagers\RoleRelationManager;
 use App\Filament\Resources\UserResource\Widgets\UsersStats;
 use App\Models\User;
 use Filament\Forms;
@@ -16,6 +18,8 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $navigationGroup = 'Users';
 
     public static function form(Form $form): Form
     {
@@ -68,7 +72,8 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RoleRelationManager::class,
+            PermissionRelationManager::class,
         ];
     }
 
