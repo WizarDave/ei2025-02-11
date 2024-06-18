@@ -17,13 +17,17 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser
 {
     use Billable;
     use HasApiTokens;
     use HasFactory;
+    use HasPermissions;
     use HasProfilePhoto;
+    use HasRoles;
     use Notifiable;
     use TwoFactorAuthenticatable;
 
@@ -83,7 +87,7 @@ class User extends Authenticatable implements FilamentUser
         // Check if user can access panel,
         //        return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
 
-        return $this->is_admin;
+        return $this->is_admin || $this->hasRole('admin');
     }
 
     public function trialIsUsed()

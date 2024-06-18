@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ComingSoon extends Component
 {
-//  use InteractsWithBanner; // Use this trait for normal banner alerts
+    //  use InteractsWithBanner; // Use this trait for normal banner alerts
     use LivewireAlert; // Use this trait for SweetAlerts
 
     public $email;
