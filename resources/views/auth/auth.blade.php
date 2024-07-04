@@ -35,9 +35,9 @@
                 </x-button>
             </div>
             <div class="flex flex-col items-center justify-end mt-4">
-                <p class="text-base">Do not have an account?</p>
+                <p class="text-base">{{ __('Do not have an account?') }}</p>
                 <a href="{{ route('register') }}" class="ms-4 flex btn btn-ghost text-info">
-                    Register
+                    {{ __('Register') }}
                 </a>
             </div>
         </form>

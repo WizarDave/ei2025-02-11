@@ -1,8 +1,8 @@
 <div class="py-8 sm:py-16 px-8">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
-            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">FAQs</p>
-            <p class="mt-6 text-lg leading-8">Have questions? We've got you covered! </p>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{{ __('FAQs') }}</p>
+            <p class="mt-6 text-lg leading-8">{{ __('Have questions? We have got you covered!') }} </p>
         </div>
     </div>
     <div class="mx-auto max-w-3xl mt-8">
