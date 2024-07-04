@@ -32,6 +32,7 @@ class SocialiteController extends Controller
         //        ];
 
         // For twitter login make sure to enable "Request email from users" option in "User authentication settings"
+
         $user = User::firstOrCreate(['email' => $userData->getEmail()], [
             'name' => $userData->getName(),
             'password' => Hash::make(Str::random()),

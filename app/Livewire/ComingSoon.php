@@ -30,7 +30,7 @@ class ComingSoon extends Component
         $this->reset();
 
         // Use this for SweetAlerts
-        $this->alert('success', 'Thanks for subscription! We will keep you updated.', [
+        $this->alert('success', __('Thanks for subscription! We will keep you updated.'), [
             'toast' => false,
             'position' => 'center',
         ]);

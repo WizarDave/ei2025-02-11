@@ -3,10 +3,10 @@
         <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
             <div class="lg:pr-4">
                 <div class="lg:max-w-lg">
-                    <p class="text-base font-semibold leading-7">Content with Image</p>
-                    <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">A better workflow</h1>
-                    <p class="mt-6 text-xl leading-8">Welcome to TechSprint, your premier destination for cutting-edge software solutions! Our cloud-based platform revolutionizes the way you manage your business, offering seamless integration, powerful analytics, and unparalleled scalability. With TechSprint, you can streamline workflows, boost productivity, and stay ahead in today's competitive landscape.</p>
-                    <p class="mt-8">Experience the next generation of SaaS innovation with our intuitive interface and robust features. Whether you're a small business looking to optimize operations or a large enterprise seeking enterprise-level solutions, TechSprint has you covered.</p>
+                    <p class="text-base font-semibold leading-7">{{ __('Content with Image') }}</p>
+                    <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{{ __('A better workflow') }}</h1>
+                    <p class="mt-6 text-xl leading-8">{{ __('Welcome to TechSprint, your premier destination for cutting-edge software solutions! Our cloud-based platform revolutionizes the way you manage your business, offering seamless integration, powerful analytics, and unparalleled scalability. With TechSprint, you can streamline workflows, boost productivity, and stay ahead in todays competitive landscape.') }}</p>
+                    <p class="mt-8">{{ __('Experience the next generation of SaaS innovation with our intuitive interface and robust features. Whether you are a small business looking to optimize operations or a large enterprise seeking enterprise-level solutions, TechSprint has you covered.') }}</p>
                 </div>
             </div>
         </div>

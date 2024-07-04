@@ -14,7 +14,7 @@ class StripeController extends Controller
         $user = $request->user();
 
         if ($user->subscribedToPrice($price)) {
-            return redirect()->back()->dangerBanner('You are already subscribed to that plan');
+            return redirect()->back()->dangerBanner(__('You are already subscribed to that plan'));
         }
 
         if ($user->subscribed() && $user->subscription()?->valid()) {
@@ -24,7 +24,7 @@ class StripeController extends Controller
                 ->swap($price);
 
             // Replace back() with the route where user should be redirected after successful subscription
-            return redirect()->back()->banner('You have successfully subscribed to '.$price.' plan');
+            return redirect()->back()->banner(__('You have successfully subscribed to :price plan', ['price' => $price]));
         }
 
         $checkout = $user
@@ -63,12 +63,12 @@ class StripeController extends Controller
 
         $request->user()->update(['trial_is_used' => true]);
 
-        return redirect()->route('dashboard')->banner('You have successfully subscribed');
+        return redirect()->route('dashboard')->banner(__('You have successfully subscribed'));
     }
 
     public function error()
     {
-        return redirect()->route('stripe.plans')->dangerBanner('Something Went Wrong');
+        return redirect()->route('stripe.plans')->dangerBanner(__('Something Went Wrong'));
     }
 
     public function billing(Request $request): Response
