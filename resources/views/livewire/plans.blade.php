@@ -12,7 +12,10 @@
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mx-auto max-w-6xl my-8">
         @foreach($plans as $plan)
-            <div class="px-8 py-12 border border-base-200 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer">
+            <div class="relative px-8 py-12 border border-base-200 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer {{ isset($plan['bestseller']) && $plan['bestseller'] ? 'border-secondary border-2' : '' }}">
+                @if(isset($plan['bestseller']) && $plan['bestseller'] === true)
+                    <span class="absolute top-5 right-5 bg-secondary text-white rounded-full px-4 font-semibold sm:font-medium text-sm sm:text-base">bestseller</span>
+                @endif
                 <p class="text-3xl font-extrabold mb-2">{{ $plan['name'] }}</p>
                 <p class="mb-6 h-16">
                     <span>{{ __('Best For:') }} </span> <span>{{ $plan['description'] }}</span></p>
