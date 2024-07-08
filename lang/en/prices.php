@@ -73,6 +73,7 @@ return [
                 'Feature 7',
                 'Feature 8',
             ],
+            'bestseller' => true,
         ],
         [
             'name' => 'Pro',
