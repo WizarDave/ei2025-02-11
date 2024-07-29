@@ -15,8 +15,7 @@
         public function handle()
         {
             $commands = [
-                'git remote add upstream https://github.com/karakhanyans-tools/larafast-tall.git',
-                'git fetch upstream',
+                'git remote add larafast https://github.com/karakhanyans-tools/larafast-tall.git',
             ];
 
             foreach ($commands as $command) {
