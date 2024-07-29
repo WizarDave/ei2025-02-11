@@ -14,6 +14,12 @@
 
         public function handle()
         {
+            // Check if the .git directory exists
+            if (!is_dir(base_path('.git'))) {
+                $this->error('This directory is not a git repository.');
+                return 1;
+            }
+
             $commands = [
                 'git remote add larafast https://github.com/karakhanyans-tools/larafast-tall.git',
             ];
