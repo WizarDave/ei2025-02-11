@@ -9,6 +9,7 @@
                 <li><a href="#">{{ __('Pricing') }}</a></li>
                 <li><a href="#">{{ __('How It Works') }}</a></li>
                 <li><a href="{{ route('blog.index') }}">{{ __('Blog') }}</a></li>
+                <li><a href="{{ route('changelog') }}">{{ __('Changelog') }}</a></li>
             </ul>
         </div>
         <a href="/" class="flex flex-row items-center justify-center font-bold text-md">
@@ -25,6 +26,7 @@
             <li><a href="#">{{ __('How It Works') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ __('Blog') }}</a></li>
             <li><a href="{{ route('coming-soon') }}">{{ __('Coming Soon') }}</a></li>
+            <li><a href="{{ route('changelog') }}">{{ __('Changelog') }}</a></li>
         </ul>
     </div>
     <div class="navbar-end">
