@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\MagicLinkController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ChangelogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OgImageController;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('changelog', [ChangelogController::class, 'index'])->name('changelog');
 
 // Demo Coming Soon Page
 Route::get('coming-soon', function () {
