@@ -1,3 +1,4 @@
+{{--Used for MagicLink Auth--}}
 <x-home-layout>
     <x-authentication-card>
         <x-slot name="logo">
