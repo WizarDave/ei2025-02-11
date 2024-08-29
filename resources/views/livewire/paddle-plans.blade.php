@@ -15,7 +15,9 @@
                 <p class="mb-6">
                     <span>{{ __('Best For:') }} </span> <span>{{ $plan['description'] }}</span></p>
                 <p class="mb-6">
-                    <span class="text-4xl font-extrabold">${{ $plan['price'] }}</span>
+                    <span class="text-4xl font-extrabold">
+                        {{ config('services.cashier.currency_symbol') }}{{ $plan['price'] }}
+                    </span>
                     @if($plan['price'] !== 0)
                         <span class="text-base font-medium">/{{ $plan['interval'] }}</span>
                     @endif
