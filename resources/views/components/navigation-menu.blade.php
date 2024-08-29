@@ -102,6 +102,12 @@
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
+                            @if(auth()->user()->subscribed())
+                                {{-- Change to route('lemonsqueezy.billing') for LemonSqueezy--}}
+                                <x-dropdown-link href="{{ route('stripe.billing') }}">
+                                    {{ __('Billing Portal') }}
+                                </x-dropdown-link>
+                            @endif
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}

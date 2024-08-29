@@ -6,7 +6,7 @@
             </div>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li><a href="#">{{ __('About Us') }}</a></li>
-                <li><a href="#">{{ __('Pricing') }}</a></li>
+                <li><a href="#pricing">{{ __('Pricing') }}</a></li>
                 <li><a href="#">{{ __('How It Works') }}</a></li>
                 <li><a href="{{ route('blog.index') }}">{{ __('Blog') }}</a></li>
                 <li><a href="{{ route('changelog') }}">{{ __('Changelog') }}</a></li>
@@ -21,8 +21,8 @@
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            <li><a href="#">{{ __('About Us') }}</a></li>
-            <li><a href="#">{{ __('Pricing') }}</a></li>
+            <li><a href="#features">{{ __('About Us') }}</a></li>
+            <li><a href="#pricing">{{ __('Pricing') }}</a></li>
             <li><a href="#">{{ __('How It Works') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ __('Blog') }}</a></li>
             <li><a href="{{ route('coming-soon') }}">{{ __('Coming Soon') }}</a></li>

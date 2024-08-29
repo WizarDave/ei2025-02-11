@@ -12,4 +12,10 @@
             </div>
         </div>
     </div>
+
+    @if(auth()->user()->subscribed())
+        Yes, you are subscribed!
+    @else
+        <livewire:plans />
+    @endif
 </x-app-layout>
