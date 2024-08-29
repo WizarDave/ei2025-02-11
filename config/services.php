@@ -31,6 +31,11 @@ return [
         ],
     ],
 
+    'cashier' =>[
+        'currency' => env('CASHIER_CURRENCY', 'USD'),
+        'currency_symbol' => env('CASHIER_CURRENCY_SYMBOL', '$'),
+    ],
+
     'stripe' => [
         'model' => App\Models\User::class,
         'key' => env('STRIPE_KEY'),
