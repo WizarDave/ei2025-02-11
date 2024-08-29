@@ -88,3 +88,5 @@ Route::middleware([
         // Add endpoints that are only for subscribed users
     });
 });
+
+require_once __DIR__ . '/emails.php';
