@@ -4,8 +4,10 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Filament\Commands\MakeUserCommand;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
 
+use Spatie\Permission\Models\Role;
 use function Laravel\Prompts\password;
 use function Laravel\Prompts\text;
 
@@ -16,6 +18,11 @@ class MakeAdmin extends MakeUserCommand
                             {--email= : A valid and unique email address}
                             {--password= : The password for the user (min. 8 characters)}';
 
+    /**
+     * Returns user data.
+     *
+     * @return array
+     */
     protected function getUserData(): array
     {
         return [
@@ -38,13 +45,29 @@ class MakeAdmin extends MakeUserCommand
                 label: 'Password',
                 required: true,
             )),
-            'is_admin' => true,
         ];
+    }
+
+    /**
+     * Create admin user and assign admin role
+     *
+     * @return Authenticatable
+     */
+    protected function createUser(): Authenticatable
+    {
+        $user = $this->getUserModel()::create($this->getUserData());
+
+        $role = Role::firstOrCreate(['name' => 'admin']);
+        $user->assignRole($role);
+
+        return $user;
     }
 
     public function handle(): int
     {
         parent::handle();
+
+
 
         return static::SUCCESS;
     }
