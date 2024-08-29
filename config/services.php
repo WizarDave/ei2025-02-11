@@ -31,7 +31,7 @@ return [
         ],
     ],
 
-    'cashier' =>[
+    'cashier' => [
         'currency' => env('CASHIER_CURRENCY', 'USD'),
         'currency_symbol' => env('CASHIER_CURRENCY_SYMBOL', '$'),
     ],

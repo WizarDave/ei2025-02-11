@@ -10,7 +10,6 @@
         "filament/filament": "^3.2",
         "jantinnerezo/livewire-alert": "^3.0",
         "laravel/cashier": "^15.3",
-        "laravel/cashier-paddle": "^2.4",
         "laravel/framework": "^11.0",
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
