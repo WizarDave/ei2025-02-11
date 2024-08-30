@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class WelcomeNotification extends Notification
+class OrderCreatedNotification extends Notification
 {
     use Queueable;
 
@@ -34,10 +34,10 @@ class WelcomeNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Welcome to '.config('app.name'))
-            ->markdown('emails.welcome',
-                ['user' => $notifiable]
-            );
+            ->subject('Order Created')
+            ->markdown('emails.order-created', [
+                'user' => $notifiable,
+            ]);
     }
 
     /**

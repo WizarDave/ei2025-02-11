@@ -89,4 +89,4 @@ Route::middleware([
     });
 });
 
-require_once __DIR__ . '/emails.php';
+require_once __DIR__.'/emails.php';

@@ -6,8 +6,8 @@ use App\Models\User;
 use Filament\Commands\MakeUserCommand;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
-
 use Spatie\Permission\Models\Role;
+
 use function Laravel\Prompts\password;
 use function Laravel\Prompts\text;
 
@@ -20,8 +20,6 @@ class MakeAdmin extends MakeUserCommand
 
     /**
      * Returns user data.
-     *
-     * @return array
      */
     protected function getUserData(): array
     {
@@ -50,8 +48,6 @@ class MakeAdmin extends MakeUserCommand
 
     /**
      * Create admin user and assign admin role
-     *
-     * @return Authenticatable
      */
     protected function createUser(): Authenticatable
     {
@@ -66,8 +62,6 @@ class MakeAdmin extends MakeUserCommand
     public function handle(): int
     {
         parent::handle();
-
-
 
         return static::SUCCESS;
     }
