@@ -1,17 +1,19 @@
 <?php
 
-    namespace App\Livewire;
+namespace App\Livewire;
 
-    use Livewire\Component;
+use Livewire\Component;
 
-    class Problem extends Component
+class Problem extends Component
+{
+    public $steps = [];
+
+    public $heading;
+
+    public $text;
+
+    public function render()
     {
-        public $steps = [];
-        public $heading;
-        public $text;
-
-        public function render()
-        {
-            return view('livewire.problem');
-        }
+        return view('livewire.problem');
     }
+}

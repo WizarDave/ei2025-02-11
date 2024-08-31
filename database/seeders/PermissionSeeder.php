@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
 
 class PermissionSeeder extends Seeder
 {
@@ -11,13 +12,13 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        $roles = [
+        $permissions = [
             'add_article',
             'remove_article',
         ];
 
-        foreach ($roles as $role) {
-            \Spatie\Permission\Models\Permission::create(['name' => $role]);
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
         }
     }
 }

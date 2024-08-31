@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Models\User;
+use App\Notifications\SubscriptionCreatedNotification;
 use Laravel\Cashier\Events\WebhookReceived;
 
 class StripeEventListener
@@ -24,7 +25,8 @@ class StripeEventListener
             $stripeId = $event->payload['data']['object']['customer'];
             // $product = $event->payload['data']['object']['plan']['product'];
 
-            // $user = User::where('stripe_id', $stripeId)->firstOrFail();
+            $user = User::where('stripe_id', $stripeId)->firstOrFail();
+            $user->notify(new SubscriptionCreatedNotification());
 
             // Write your logic here
         }

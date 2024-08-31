@@ -31,7 +31,7 @@ return [
         ],
     ],
 
-    'cashier' =>[
+    'cashier' => [
         'currency' => env('CASHIER_CURRENCY', 'USD'),
         'currency_symbol' => env('CASHIER_CURRENCY_SYMBOL', '$'),
     ],
@@ -82,5 +82,9 @@ return [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => '/auth/callback/google',
+    ],
+
+    'resend' => [
+        'key' => env('RESEND_API_KEY'),
     ],
 ];
