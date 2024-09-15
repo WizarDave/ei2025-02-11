@@ -60,12 +60,17 @@ class StripeOrderResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('amount')
                     ->numeric()
+                    ->money('USD', divideBy: 100)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('currency')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
+                    ->badge()
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('payment_status')
+                    ->badge()
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
