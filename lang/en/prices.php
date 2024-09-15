@@ -46,6 +46,7 @@ return [
             'priceId' => 'pri_01ht4q7xjjbgmeyxr7sgkmzkmt', // Paddle Price ID
         ],
     ],
+
     'stripe' => [
         [
             'name' => 'Free',

@@ -11,11 +11,15 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        User::factory(500)->create([
+            'created_at' => function () {
+                return now();
+            },
         ]);
+
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
