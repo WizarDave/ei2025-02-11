@@ -1,6 +1,6 @@
 <?php
 
-test('tests that true is true', static function () {
+test('tests that true is true', function () {
 
     expect(true)->toBeTrue();
 });
