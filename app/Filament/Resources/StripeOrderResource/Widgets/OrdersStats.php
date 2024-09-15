@@ -26,7 +26,7 @@ class OrdersStats extends BaseWidget
         $totalToday = $orders->where('created_at', '>', today()->startOfDay())->sum('amount') / 100;
         $totalYesterday = $orders->whereBetween('created_at', [today()->subDay()->startOfDay(), today()->startOfDay()])->sum('amount') / 100;
         $lastSevenDays = $orders->where('created_at', '>', now()->subDays(7)->startOfDay())->sum('amount') / 100;
-        $previousSevenDays = $orders->whereBetween('created_at', [now()->subDays(14)->startOfDay(), now()->subDays(7)->startOfDay()])->sum('total') / 100;
+        $previousSevenDays = $orders->whereBetween('created_at', [now()->subDays(14)->startOfDay(), now()->subDays(7)->startOfDay()])->sum('amount') / 100;
         // $lastMonth = $orders->where('created_at', '>', now()->subMonth()->startOfDay())->sum('amount') / 100;
         // $previousMonth = $orders->whereBetween('created_at', [now()->subMonths(2)->startOfDay(), now()->subMonth()->startOfDay()])->sum('amount') / 100;
 
@@ -34,8 +34,10 @@ class OrdersStats extends BaseWidget
             Stat::make('Total Orders', $orders->count())
                 ->chart($orders
                     ->sortBy('created_at')
-                    ->groupBy(fn ($order) => $order->created_at->format('Y-m-d'))
-                    ->map(fn ($group) => $group->count())
+                    ->groupBy('created_at')
+                    ->mapWithKeys(function ($result, $key) {
+                        return [$key => $result->count()];
+                    })
                     ->values()
                     ->toArray())
                 ->color('primary'),
@@ -43,8 +45,10 @@ class OrdersStats extends BaseWidget
             Stat::make('Total Sales', '$'.number_format($total, 2))
                 ->chart($orders
                     ->sortBy('created_at')
-                    ->groupBy(fn ($order) => $order->created_at->format('Y-m-d'))
-                    ->map(fn ($group) => $group->sum('total') / 100)
+                    ->groupBy('created_at')
+                    ->mapWithKeys(function ($result, $key) {
+                        return [$key => $result->sum('amount') / 100];
+                    })
                     ->values()
                     ->toArray())
                 ->color('success'),
@@ -60,8 +64,10 @@ class OrdersStats extends BaseWidget
                 ->chart($orders
                     ->where('created_at', '>', now()->subDays(7)->startOfDay())
                     ->sortBy('created_at')
-                    ->groupBy(fn ($order) => $order->created_at->format('Y-m-d'))
-                    ->map(fn ($group) => $group->sum('total') / 100)
+                    ->groupBy('created_at')
+                    ->mapWithKeys(function ($result, $key) {
+                        return [$key => $result->sum('amount') / 100];
+                    })
                     ->values()
                     ->toArray())
                 ->color($lastSevenDays >= $previousSevenDays ? 'success' : 'danger'),
@@ -72,8 +78,10 @@ class OrdersStats extends BaseWidget
             //     ->chart($orders
             //         ->where('created_at', '>', now()->subMonth()->startOfDay())
             //         ->sortBy('created_at')
-            //         ->groupBy(fn ($order) => $order->created_at->format('Y-m-d'))
-            //         ->map(fn ($group) => $group->sum('total') / 100)
+            //         ->groupBy('created_at')
+            //         ->mapWithKeys(function ($result, $key) {
+            //             return [$key => $result->sum('amount') / 100];
+            //         })
             //         ->values()
             //         ->toArray())
             //     ->color($lastMonth >= $previousMonth ? 'success' : 'danger'),
