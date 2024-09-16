@@ -60,7 +60,7 @@ class StripeOrderResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('amount')
                     ->numeric()
-                    ->money('USD', divideBy: 100)
+                    ->money(config('services.cashier.currency'), divideBy: 100)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('currency')
                     ->searchable(),
