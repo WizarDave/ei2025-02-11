@@ -35,12 +35,15 @@ class StripeController extends Controller
             $checkout = $checkout->trialDays((int) config('services.stripe.trial_period_days'));
         }
 
-        return $checkout
-            ->allowPromotionCodes() // Remove this if you do not allow promo codes
-            ->checkout([
-                'success_url' => route('stripe.success').'?session_id={CHECKOUT_SESSION_ID}',
-                'cancel_url' => route('dashboard'),
-            ]);
+        // Allow promotion codes
+        if (config('services.stripe.allow_promotion_codes')) {
+            $checkout = $checkout->allowPromotionCodes();
+        }
+
+        return $checkout->checkout([
+            'success_url' => route('stripe.success').'?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url' => route('dashboard'),
+        ]);
     }
 
     public function productCheckout(Request $request, $price)
@@ -51,6 +54,7 @@ class StripeController extends Controller
             'metadata' => [
                 'price' => $price,
             ],
+            'allow_promotion_codes' => config('services.stripe.allow_promotion_codes'),
         ]);
     }
 
