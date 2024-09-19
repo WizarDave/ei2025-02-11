@@ -12,8 +12,10 @@
             </div>
         @endsession
 
-        <livewire:social.buttons />
-        <div class="divider">or</div>
+        @if(config('auth.use_social_auth'))
+            <livewire:social.buttons/>
+            <div class="divider">or</div>
+        @endif
 
         <form method="POST" action="{{ route('login') }}">
             @csrf

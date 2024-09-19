@@ -112,4 +112,5 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    'use_social_auth' => env('AUTH_USE_SOCIAL_AUTH', true),
 ];
