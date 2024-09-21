@@ -41,7 +41,7 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'trial_period_days' => env('STRIPE_TRIAL_PERIOD_DAYS', 7),
-        'allow_promotion_codes' => env('STRIPE_ALLOW_PROMOTION_CODES', false),
+        'allow_promotion_codes' => env('STRIPE_ALLOW_PROMOTION_CODES', true),
     ],
 
     'lemonsqueezy' => [
