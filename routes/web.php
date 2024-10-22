@@ -13,6 +13,7 @@ use App\Http\Controllers\Payments\StripeController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Middleware\Subscribed;
 use Illuminate\Support\Facades\Route;
+use App\Services\OpenAIService;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
