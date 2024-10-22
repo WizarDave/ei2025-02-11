@@ -40,6 +40,7 @@ class CreateStripeSinglePaymentProducts extends Command
             try {
                 $product = $stripe->products->create($item);
                 $this->info('Created Product: '.$product['name']);
+                
             } catch (Exception $e) {
                 $product = $stripe->products->update($item['id'], Arr::except($item, ['id']));
                 $this->info('Updated Product: '.$product['name']);
@@ -50,13 +51,15 @@ class CreateStripeSinglePaymentProducts extends Command
 
                 if (empty($prices['data'])) {
                     $prices = [];
-                    foreach ($data['prices'] as $priceItem) {
+
+                    foreach (collect($data['prices'])->where('product', $product['id']) as $priceItem) {
                         $price = $stripe->prices->create($priceItem);
                         $prices[] = $price['id'];
 
                         $this->info('Created Price: '.$price['id']);
 
                     }
+
                     $this->info('Updating Product Default Price: '.$prices[0]);
                     $stripe->products->update($product['id'], ['default_price' => $prices[0]]);
 
@@ -65,9 +68,12 @@ class CreateStripeSinglePaymentProducts extends Command
 
                 foreach ($prices['data'] as $price) {
                     $priceItem = collect($data['prices'])->firstWhere(fn ($item) => $item['metadata']['points'] === $price['metadata']['points']);
-                    $price = $stripe->prices->update($price['id'], Arr::only(['metadata', 'nickname'], $priceItem));
 
-                    $this->info('Updated Price: '.$price['id']);
+                    if ($priceItem) {
+                        $price = $stripe->prices->update($price['id'], Arr::only(['metadata', 'nickname'], $priceItem));
+
+                        $this->info('Updated Price: '.$price['id']);
+                    }
                 }
             } catch (Exception $e) {
                 $this->error($e->getMessage());
