@@ -91,9 +91,3 @@ Route::middleware([
 });
 
 require_once __DIR__.'/emails.php';
-
-use App\Services\XAIService;
-
-Route::get('/xai', function (XAIService $xai) {
-    return $xai->completion('Hello, how are you?');
-});
