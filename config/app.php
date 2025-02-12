@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Elderberry.Info'),
 
     // add domain without host, used for Browsershot Dynamic Open Graph Images
-    'app_domain' => env('APP_DOMAIN', 'larafast.com'),
+    'app_domain' => env('APP_DOMAIN', 'elderberry.info'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE', 'UTC'),
+    'timezone' => env('APP_TIMEZONE', 'UTC-6'),
 
     /*
     |--------------------------------------------------------------------------

@@ -15,9 +15,13 @@ use App\Http\Middleware\Subscribed;
 use Illuminate\Support\Facades\Route;
 use App\Services\OpenAIService;
 
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 Route::get('sitemap', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('changelog', [ChangelogController::class, 'index'])->name('changelog');
+
+Route::get('/', function () {
+    return view('pages.wiz');
+})->name('WizarDaves Page');
 
 // Demo Coming Soon Page
 Route::get('coming-soon', function () {
