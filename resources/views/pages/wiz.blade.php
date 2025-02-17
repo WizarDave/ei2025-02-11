@@ -56,7 +56,7 @@
           <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
             <div class="px-8 pt-2 pb-3 ">
-                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300">People</p>
+                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">People</p>
                 <ul class="mt-2 list-disc">
                     <li >Other consumers</li>
                     <li>Hobbyists (gardeners)</li>
@@ -75,7 +75,7 @@
           <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
             <div class="px-8 pt-2 pb-3 ">
-                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300">Information</p>
+                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Information</p>
                 <ul class="mt-2 list-disc">
                     <li>Home Remedies</li>
                     <li>Health research</li>
@@ -93,7 +93,7 @@
           <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
             <div class="px-8 pt-2 pb-3 ">
-                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300">Products</p>
+                <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Products</p>
                 <ul class="mt-2 list-disc">
                     <li>Drinks</li>
                     <li>Wine & Mead</li>
@@ -235,9 +235,75 @@
     </div>
 </div>
 
+<div class="bg-violet-50 py-6">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">Coming Soon...</p>
+    <div class="mt-2 grid gap-4 lg:grid-cols-3 lg:grid-rows-1">
+      <div class="relative lg:row-span-1">
+        <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+          <div class="px-8 pt-2 pb-3 ">
+              <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Connect with People</p>
+              <ul class="mt-2 list-disc">
+                  <li>Your public page</li>
+                  <li>Comment everywhere<br />On other people's pages<br />On Wiki pages<br />On any information page</li>
+                  <li>Local Eddie Elderberry Groups<br />County and State</li>
+                  <li>Local experts (Eddie Elderberries)</li>
+              </ul>
+              <p class="mb-6">More...</p>
+          </div>
+          
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
+      </div>
+      <div class="relative max-lg:row-start-1">
+        <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+          <div class="px-8 pt-2 pb-3 ">
+              <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Connect with Information</p>
+              <ul class="mt-2 list-disc">
+                  <li>Wiki will include:<br />Recipes<br />Research links<br />Detailed How Tos<br />Start a business<br /></li>
+                  <li>FAQs</li>
+                  <li>Surveys</li>
+                  <li>Downloads</li>
+              </ul>
+              <p class="mb-6">More...</p>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>
+      </div>
+      <div class="relative lg:row-span-1">
+        <div class="absolute inset-px rounded-lg bg-white  border-8 border-purple-600 rounded-lg"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+          <div class="px-8 pt-2 pb-3 ">
+              <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Connect with Products</p>
+              <ul class="mt-2 list-disc">
+                  <li>Business Directory</li>
+                  <li>Product information</li>
+                  <li>Elderberry Products</li>
+                  <li>Cuttings & Plants</li>
+                  <li>Wholesale</li>
+                  <li>Local experts (Eddie Elderberries)<br />will stock products <br />and supplies</li>
+              </ul>
+              <p class="mb-6">More...</p>
+          </div>
+          
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container py-2 px-10 mx-0 min-w-full flex flex-col items-center"">  
     <button type="button" onclick="location.href='#top';" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900" href="#">Get an email alert as we add new features to Elderberry.Info</button>
     </form>
+</div>
+
+<div class="container py-2 px-10 mx-0 min-w-full flex flex-col items-center"">  
+  <p class="mt-2 mb-2 text-lg font-bold tracking-wide text-gray-950 text-center bg-purple-300 rounded">Help support this site. This page sponsored by...</p>
+  <a href="https://www.amazon.com/dp/BT00LN946S?externalReferenceId=0b18fbbc-e180-46c4-a0c6-ff57c46f72f6" target="_blank" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+    <img src="images/prime.png" alt=""></a>
 </div>
 
 <livewire:copyright/>
