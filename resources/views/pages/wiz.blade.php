@@ -310,7 +310,7 @@
 
 @livewireScripts
 
-{{--for SweetAlert2--}}
+{{--for SweetAlert2  test--}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <x-livewire-alert::scripts />
 
